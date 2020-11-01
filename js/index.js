@@ -25,25 +25,73 @@ headingLogo.addEventListener("mouseout", function(event){
 });
 
 
+/* click  sign up buttons*/
+let btn = document.querySelectorAll(".btn");
+btn.forEach(b => {
+    b.addEventListener("click", function(){
+         b.style.backgroundColor = "#a6f6f1";})
+});
+
+btn.forEach(b => {
+    b.addEventListener("mouseout", function(){
+         b.style.backgroundColor = "#41aea9";})
+    });
+
+
+/* * `scroll` */
+
+window.addEventListener('scroll', () => {
+    const mouseScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const  mouseScrolled = window.scrollY; /* scrollY is the number of pixels we scrolled*/
+    if(Math.ceil(mouseScroll) === mouseScrolled) {
+        alert ("Don't forget to Sign Up!");
+    }
+
+})
+
+/* * `load` */
+const busImg = document.querySelector(".intro img");
+busImg.addEventListener('load', function(){
+    alert("page loaded!")
+})
+
+
+/*  * `dblclick` */
+const changeImage = document.querySelector('.intro img');
+changeImage.addEventListener('dblclick', () => {
+  changeImage.src = "https://images.unsplash.com/photo-1577459640575-219cbf231b8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1254&q=80";
+});
+
+
+
 
 
 /* * `keydown` */
-/*  * `wheel` */
-/* * `load` */
-/* * `focus` */
-/*const signUp = document.querySelector('div[class= "btn"]');
+/*let body = document.querySelector(body)
+body.addEventListener('keydown', function ( event){
+    if (event.key === 'd') {
+        event.target.style.backgroundColor = 'pink';
+    }
+    if (event.key = 'a') {
+        event.target.style.backgroundColor = '';
 
-signUp.addEventListener('focus', (event) => {
-    event.target.style.color = 'red';
-})*/
+    }
+}) */
+
+/*  * `wheel` */
+
+
+
+/* * `focus` */
+
 /*  * `resize` */
 /*const resizeImg = document.querySelector('.intro img');
 window.addEventListener('resize', () => {
 resizeImg.src = "img/fun-bus.jpg"
   }); */
-/* * `scroll` */
+
 /*  * `select` */
-/*  * `dblclick` */
+
 /* * `drag / drop` */
 
 /* Note: Drag and drop is a bit more advanced than the others: it's not actually a single type of event but several types that need to work together.
