@@ -63,37 +63,62 @@ changeImage.addEventListener('dblclick', () => {
 });
 
 
+/*  * `resize` */
+let navBackground = document.querySelector('nav')
+window.addEventListener('resize', () => {
+    navBackground.style.backgroundColor = "#a6f6f1"
+})
+
+
+
+/* mouseenter */
+const img = document.querySelectorAll('img')
+img.forEach(i => {
+    i.addEventListener("mouseenter", () => {
+        i.style.transform = "scale(1.2)";
+      });
+       i.style.transition = "all 0.3s";
+});
+
+
+
+/*mouse leave */
+img.forEach(i => {
+    i.addEventListener("mouseleave", () => {
+        i.style.transform = "scale(1)";
+      });
+       i.style.transition = "all 0.3s";
+});
+
+
 
 
 
 /* * `keydown` */
-/*let body = document.querySelector(body)
-body.addEventListener('keydown', function ( event){
-    if (event.key === 'd') {
-        event.target.style.backgroundColor = 'pink';
-    }
-    if (event.key = 'a') {
-        event.target.style.backgroundColor = '';
+window.addEventListener('keydown', () => {
+    alert('Would you like to ride the bus and have fun?')
+})
 
-    }
-}) */
+
+
 
 /*  * `wheel` */
 
+const wheel = document.querySelectorAll('h2');
+wheel.forEach(i => {
+    i.addEventListener('wheel', () => {
+        i.style.fontSize = "50px";
+        i.style.color= "blue";
+    })
+})
 
-
-/* * `focus` */
-
-/*  * `resize` */
-/*const resizeImg = document.querySelector('.intro img');
-window.addEventListener('resize', () => {
-resizeImg.src = "img/fun-bus.jpg"
-  }); */
-
+/** [ ] Stop the navigation items from refreshing the page by using `preventDefault()`*/
+document.querySelector('nav').addEventListener('click', function(event) {
+    event.preventDefault()
+});
 /*  * `select` */
 
 /* * `drag / drop` */
-
 /* Note: Drag and drop is a bit more advanced than the others: it's not actually a single type of event but several types that need to work together.
 
 * [ ] Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
